@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 
 try:
     mydb = mysql.connector.connect(
@@ -74,7 +73,7 @@ CREATE TABLE Orders (
     if mydb.is_connected():
         print("✅ Connected to the database successfully.")
 
-except Error as e:
+except mysql.connector.Error as e:
     print("Error:", e)
 
 if mycursor:
